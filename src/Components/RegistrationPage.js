@@ -40,7 +40,7 @@ const RegistrationPage = (props) => {
   const handleClick = (event) => {
     const newState = { ...formSubmission };
     const selector = `question_${event.currentTarget.id}`;
-    newState[selector] = event.currentTarget.value;
+    newState[selector] = (event.currentTarget.value === "true" ? true : false);
     console.log(newState);
     setFormSubmission(newState);
     setClicked(current => !current)
