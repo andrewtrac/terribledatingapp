@@ -2,10 +2,10 @@ import "./ProfilePage.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function ProfilePage() {
+function ProfilePage(prop) {
 
-  const userName = "Ezra"
-
+  const userName = "gachuka@gmail.com"
+  console.log(userName)
   const asciiProfile = [
     '······················································································································pb·DDDDDDDDDDDDDDDbp··························································Q·DDDDDDDDDDDDDDDDDDDDD·b·····················································pQ·DDDDDDDDDDQ·D·DDD·DDDDDD·b·················································)Q·DDDDDDDDDDDDDD·WQDQQQ·DDDDDDb················································Q·DDDDDDDDDDDDD·DQQWuWQQQDDDDDD·C··············································WpDDDDDD··DDPPWPPPPW·····PQQ·DDDDW··············································QQDDD·QQWC·················W)QDDD·C············································)·DDDDQQWC····················WQ·D·C············································)QDDD·QWW······················)QQ·b············································)·DD··WWW·······················QDDP············································Q·D·QQQW(························Q·b···········································Q·DDQQQ·QQDbbWp··········ppWP·····)·DC··········································QQ··QQQQQpb·WQWWWc······apWWWpp···)W············································)QQQQQQQQWQ)C··W)W········SC·d·····(·············································QQQQQWWC········WC······························································)QQQQWWW·······WWC·································································QQQWWc·····sQWC··································································QQQWWW····)WW···································································QQQQWWW···WDWW···································································QQQQQWWW·········································································QQQQWWWWWPPPW····································································QQQQWWWWWQ······································································)QQWQWWWWW······································································)QQQQQWWW·······································································QQQQQQWQWWWs···································································pQQQWWWWWWW····································································QQQQQWWG·····································································pQQWWQQWWW···································································dQW·····WWWWW·······························································sW··········WWW············································································sWWW····················································ss······················WP··················································QW···········································································aQW········································································',
     '····································································································································································································spQQQWWpppu································································sQQQQQWQQQDWbWQWWQWp························································qQQQQbQbWDQD·WbWQQQWWQWWW·····················································qQQQQ·bQQWQQQQQQWQQQ·QWQQQQWp·················································QQQ··bQ···QbQQWQQQ··QQQQbQQ·QbQW···············································aQQ··D··DQWQQWQQ·bWQQWGWPWWWWQQQQWW·············································QQDDQDQPGPWP··PP··············QQpWWW···········································QQQD·bWWWG·····················sQQWQPC··········································QWQ·DWWWW······················)QWQWQ···········································)W··QWWC························QQWQWW···········································)QQ·WWpbDbbWp··········qs·s·····QWWW············································)QQbWWCGaaWWWWWp····WW(QQQ)·PPW·QWWP·············································QQbWWWWC)WW·SWQW····)C·WWC)b···QWQ·············································(WQWC··WWGC···QWC···············)W·s············································QWQWG········sWWC················W··············································)QQW·sG·······WC·································································WQWW)WW·····asWp··Wu·····························································)WWWWWWW·····WW····································································WWWWWW·s··)·····································································(WWWWGWWssQsWWWq·································································WWWQW··sWWW(·QG································································)WWWWWWW·WWWWWWW································································(QQWQQWQW··············WW·······················································sWQQQQQWWWW·WGs·s·QQWWWC························································WWWWQQQQQQWWWpWWWQWWP·······················································qWWWWWWWWWQWQQQQWWWW···········W·············································WWWWWWQWWWWs·WWWWWWW··················s·····································sQWWQW···WWWWWW······W···················ssC································sQQWWWWQWQC··WWWWWWG·····GC·················sWWssu·ss·······················sWWWWQWWWWWQWQW···SG···sG·······················WQWWsW·WssGW················sWWWWWWQQWWWWWWWQWWQ·········W····················(WWWWQQWCWGscGWss··········QWWWWWWWWWWWQWWWQWQWWWWW·······W····················QsWsSWGWQQWssWWWsG(W·······WWWWWWQWWWWQQWQWWQWWQWQQWQW························sWWWWaWsWGsQWGWWWWWWsWss·s···QQQWWWWQQWQQWQWWWWWQWQWWWWWQp····················sWWQQ(WWWWQ·WsWWWWWsWQWWsWWWWsC',
@@ -32,6 +32,7 @@ function ProfilePage() {
   const [ usersData, setUsersData ] = useState([])
   const [ currentUser, setCurentUser ] = useState({})
   const [ foundMatch, setFoundMatch ] = useState('')
+  const [ matchScore, setMatchScore ] = useState(0)
 
   useEffect(() => {
     
@@ -88,6 +89,7 @@ function ProfilePage() {
       console.log(highestFalseScoresUser)
     }
     setFoundMatch(highestFalseScoresUser)
+    setMatchScore(highestFalseScores)
   }
 
   if (!mcdLocation || !usersData || !currentUser || !foundMatch) {
@@ -102,11 +104,15 @@ function ProfilePage() {
   return (  
     <div className="profile-page">
       <div className="profile-page__container">
-        <h1 className="profile-page__title">Here you go! Your match is {foundMatch}</h1>
-        <h2 className="profile-page__text">Take it or leave it!</h2>
+        <h1 className="profile-page__title">Meet {foundMatch}.</h1>
+        <h2 className="profile-page__text">You're {`${Math.floor((matchScore/22)*100)}%`} mismatched</h2>
         <div className="ascii-image">{asciiProfile[0]}</div>
-        <span>Your meetup location</span>
+        <p className="profile-page__bio">My ideal date is drinks, salsa dancing, and grabbing a late night snack. I love to try new foods and travel. 0,, I don’t want to see pics of your kids.</p>
+        <span className="profile-page__meetup">Your meetup McDonalds</span>
         <div className="google-iframe">{randomMcD[mcdLocation]}</div>
+        <span>Your meetup time:</span>
+        <span>Monday, October</span>
+        <span>17th, 2am</span>
       </div>
     </div>
   )
