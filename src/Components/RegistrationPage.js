@@ -96,11 +96,11 @@ const RegistrationPage = (props) => {
               <p className="registrationpage__question">{question[0]}</p>
               <div className="registrationpage__radio">
                 <input 
-                type="radio" id={question[1]+index} name={question[0]} value={true} checked/>
+                type="radio" id={question[1]+index} name={question[0]} value={true} onClick={handleClick} checked/>
                 <label 
                 for={question[1]+index}>{question[1]}</label>
                 <input 
-                type="radio" id={question[2]+index} name={question[0]} value={false}/>
+                type="radio" id={question[2]+index} name={question[0]} value={false} onClick={handleClick}/>
                 <label 
                 for={question[2]+index}>{question[2]}</label>
               </div>
