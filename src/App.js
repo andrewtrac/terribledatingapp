@@ -16,9 +16,9 @@ function App() {
     <Routes>
       <Route path='/' element={<FrontPage setUserEmail={setUserEmail} setUserName={setUserName}/>} />
       <Route path="waiting" element={<WatiningPage />} />
-      <Route path="registration" element={<RegistrationPage userEmail={userEmail} />} />
-      <Route path='match' element={<ProfilePage/>} />
-      <Route path="biopage" element={<BioPage />} />
+      <Route path="registration" element={<RegistrationPage userEmail={userEmail} userName={userName}/>} />
+      <Route path='match' element={<ProfilePage userName={userName}/>} />
+      <Route path="biopage" element={<BioPage userName={userName}/>} />
     </Routes>
     </BrowserRouter>
   );
