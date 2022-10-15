@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #FAE100;
 }
 
 .registrationpage__header{
@@ -33,8 +34,22 @@
   margin-top: 30px;
 }
 
-.button_selection{
-  width: 140px;
-  border-radius: 30%;
+.button__selection__yes{
+  width: 180px;
+  height: 20px;
+  border-radius: 23%;
   font-family: 'Inconsolata';
+  background-color: #8D5705;
+  color: #FFFFFF;
+  border: none;
+}
+
+.button__selection__no{
+  width: 180px;
+  height: 20px;
+  border-radius: 23%;
+  font-family: 'Inconsolata';
+  background-color: #8A197F;
+  color: #FFFFFF;
+  border: none;
 }

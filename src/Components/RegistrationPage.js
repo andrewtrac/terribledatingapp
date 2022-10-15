@@ -74,7 +74,7 @@ const RegistrationPage = (props) => {
     ["And getting caught in the rain?", "Yes", "No"],
     ["What’s your side of the bed?", "Left", "Right"],
     ["Are you a night owl or a early bird?", "Owl", "Bird"],
-    ["Is it to-may-toe or to-mah-toe?", "To-may-toe", "To-mah-toe"],
+    ["Is it to-may-toe or to-mah-toe?", "May", "Mah"],
     ["What’s your level of commitment?", "Long", "Short"],
     ["Do you prefer cake or pie?", "Cake", "Pie"],
     ["Top or bottom?", "Top", "Bottom"],
@@ -94,7 +94,7 @@ const RegistrationPage = (props) => {
               <div className="registrationpage__question">{question[0]}</div>
               <button
                 id={index + 1}
-                className="button_selection"
+                className="button__selection__yes"
                 value={true}
                 onClick={handleClick}
               >
@@ -102,7 +102,7 @@ const RegistrationPage = (props) => {
               </button>
               <button
                 id={index + 1}
-                className="button_selection"
+                className="button__selection__no"
                 value={false}
                 style={{ marginLeft: "5px" }}
                 onClick={handleClick}
