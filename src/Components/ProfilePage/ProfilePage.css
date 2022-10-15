@@ -7,3 +7,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+div.ascii-image {
+  font-size: .5rem;
+  word-wrap: break-word;
+  width: 20rem;
+  font-family: 'Inconsolata';
+}
