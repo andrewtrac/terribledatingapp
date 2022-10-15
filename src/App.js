@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="registration" element={<RegistrationPage userEmail={userEmail} />} />
-      <Route path='profile' element={<ProfilePage/>} />
+      <Route path='match' element={<ProfilePage/>} />
       <Route path='/' element={<FrontPage setUserEmail={setUserEmail}/>} />
     </Routes>
   </BrowserRouter>

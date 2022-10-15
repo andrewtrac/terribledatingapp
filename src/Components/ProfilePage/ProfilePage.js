@@ -26,7 +26,10 @@ function ProfilePage() {
 
   if (!mcdLocation) {
     return (
-      <h1>... Matching ...</h1>
+      <>
+        <h1>... Matching ...</h1>
+        <p>If it takes too long, reload page</p>
+      </>
     )
   }
   
