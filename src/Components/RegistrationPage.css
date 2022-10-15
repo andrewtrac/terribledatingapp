@@ -6,7 +6,7 @@
 
 .registrationpage__header{
   margin-top: 44px;
-  font-family: anybody;
+  font-family: 'Anybody';
   font-size: 30px;
 }
 
@@ -18,5 +18,17 @@
 }
 
 .registrationpage__item{
-  font-family: inconsolata;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inconsolata';
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.registrationpage__question{
+  width: 200px;
+}
+
+.registrationpage__footer{
+  margin-top: 30px;
 }
