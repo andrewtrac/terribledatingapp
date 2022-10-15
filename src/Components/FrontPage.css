@@ -1,0 +1,25 @@
+.frontpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FF9A78;
+}
+
+.frontpage__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.frontpage__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.frontpage__input {
+    margin: 1rem 0 2rem;
+    padding: .5rem;
+}
