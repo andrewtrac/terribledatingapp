@@ -44,11 +44,11 @@ const RegistrationPage = (props) => {
     setFormSubmission(newState);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     axios.defaults.headers.post["Content-Type"] =
       "application/x-www-form-urlencoded";
 
-    axios
+    await axios
       .post(`https://terribledatingapp-api.herokuapp.com/`, formSubmission)
       .then((res) => {
         console.log(res);
@@ -72,12 +72,12 @@ const RegistrationPage = (props) => {
     ["Backstreet Boys or Nsync?", "BSB", "NSYNC"],
     ["Do you like pina coladas", "Yes", "No"],
     ["And getting caught in the rain?", "Yes", "No"],
-    ["What’s your side of the bed?", "Left", "Right"],
+    ["Do you like pineapple on pizza?", "Yes", "No"],
     ["Are you a night owl or a early bird?", "Owl", "Bird"],
-    ["Is it to-may-toe or to-mah-toe?", "To-may-toe", "To-mah-toe"],
+    ["Is it to-may-toe or to-mah-toe?", "May", "Mah"],
     ["What’s your level of commitment?", "Long", "Short"],
     ["Do you prefer cake or pie?", "Cake", "Pie"],
-    ["Top or bottom?", "Top", "Bottom"],
+    ["Do you like to travel?", "Yes", "No"],
     ["Ruffled chips or smooth?", "Ruffle", "Smooth"],
     ["Do you like to party? ;)", "Yes", "No"],
   ];
@@ -94,7 +94,7 @@ const RegistrationPage = (props) => {
               <div className="registrationpage__question">{question[0]}</div>
               <button
                 id={index + 1}
-                className="button_selection"
+                className="button__selection__yes"
                 value={true}
                 onClick={handleClick}
               >
@@ -102,7 +102,7 @@ const RegistrationPage = (props) => {
               </button>
               <button
                 id={index + 1}
-                className="button_selection"
+                className="button__selection__no"
                 value={false}
                 style={{ marginLeft: "5px" }}
                 onClick={handleClick}
