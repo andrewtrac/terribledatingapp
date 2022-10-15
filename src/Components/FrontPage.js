@@ -30,16 +30,14 @@ function FrontPage( {setUserEmail, setUserName} ) {
         </div>
         <form className="frontpage__form" onSubmit={handleEmailSubmit}>
             <label className="frontpage__label">
-                What's your name?
-                <input className="frontpage__input" type="text" name="name" id="name" value={name} onChange={handleNameChange} />
+                <input className="frontpage__input" type="text" name="name" id="name" value={name} onChange={handleNameChange} placeholder="Enter your name"/>
             </label>
             <label className="frontpage__label">
-                Enter your email address
-                <input className="frontpage__input" type="email" name="email" id="email" value={email} onChange={handleEmailChange} />
+                <input className="frontpage__input" type="email" name="email" id="email" value={email} onChange={handleEmailChange} placeholder="Enter your email" />
             </label>
-            <label className="frontpage__label">
-                Ready to find your perfect mismatch!
-                <input className="frontpage__cta" type="submit" value="Let's Go!"/>
+            <label className="frontpage__shoutout">
+                Ready to find your perfect mismatch?
+                <input className="frontpage__cta" type="submit" value="ENTER (I dare you!)"/>
             </label>
         </form>
     </main>

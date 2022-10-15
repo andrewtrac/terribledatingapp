@@ -12,7 +12,7 @@ h1, h2 {
   font-family: 'Anybody';
 }
 
-p, label, button {
+p, label, button, input {
   font-family: 'Inconsolata';
 }
 
