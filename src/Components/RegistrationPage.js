@@ -34,6 +34,7 @@ const RegistrationPage = (props) => {
   };
   
   const [formSubmission, setFormSubmission] = useState(defaultObject);
+  const [clicked, setClicked] = useState(false)
   const navigate = useNavigate();
 
   const handleClick = (event) => {
@@ -42,6 +43,7 @@ const RegistrationPage = (props) => {
     newState[selector] = event.currentTarget.value;
     console.log(newState);
     setFormSubmission(newState);
+    setClicked(current => !current)
   };
 
   const handleSubmit = async () => {
@@ -84,17 +86,33 @@ const RegistrationPage = (props) => {
 
   return (
     <div className="registrationpage__body">
-      <div className="registrationpage__header">
+      <h1 className="registrationpage__header">
         Lets get to know each other!
-      </div>
+      </h1>
       <div className="registrationpage__form">
         {questionArray.map((question, index) => {
           return (
             <div className="registrationpage__item">
-              <div className="registrationpage__question">{question[0]}</div>
+              <p className="registrationpage__question">{question[0]}</p>
+              <div className="registrationpage__radio">
+                <input 
+                type="radio" id={question[1]+index} name={question[0]} value={true} checked/>
+                <label 
+                for={question[1]+index}>{question[1]}</label>
+                <input 
+                type="radio" id={question[2]+index} name={question[0]} value={false}/>
+                <label 
+                for={question[2]+index}>{question[2]}</label>
+              </div>
+
+
+
+
+
+              {/* <div>
               <button
                 id={index + 1}
-                className="button__selection__yes"
+                className="button__selection button__selection--yes"
                 value={true}
                 onClick={handleClick}
               >
@@ -102,19 +120,20 @@ const RegistrationPage = (props) => {
               </button>
               <button
                 id={index + 1}
-                className="button__selection__no"
+                className="button__selection button__selection--no"
                 value={false}
                 style={{ marginLeft: "5px" }}
                 onClick={handleClick}
               >
                 {question[2]}
               </button>
+              </div> */}
             </div>
           );
         })}
       </div>
       <div className="registrationpage__footer">
-        <button className="button_selection" onClick={handleSubmit}>
+        <button className="registrationpage__submit" onClick={handleSubmit}>
           Submit
         </button>
       </div>
