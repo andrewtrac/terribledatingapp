@@ -1,0 +1,21 @@
+.biopage__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.biopage__header {
+  margin-top: 44px;
+  font-family: "Anybody";
+  font-size: 30px;
+}
+
+.biopage__textarea {
+  margin-top: 30px;
+  width: 500px;
+  height: 500px;
+}
+
+.biopage_submit_button{
+  margin-top: 50px
+}
