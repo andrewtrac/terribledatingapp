@@ -3,54 +3,112 @@
   flex-direction: column;
   align-items: center;
   background-color: #ACFF89;
+  padding: 1rem;
 }
 
 .registrationpage__header{
-  margin-top: 44px;
-  font-family: 'Anybody';
-  font-size: 30px;
+  margin: 2rem 0;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .registrationpage__form{
   display: flex;
   flex-direction: column;
-  margin-top: 44px;
   width: 340px;
 }
 
 .registrationpage__item{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-family: 'Inconsolata';
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
   font-weight: bold;
   color: #000000;
 }
 
 .registrationpage__question{
-  width: 900px;
+  margin: 0;
+  max-width: 50%;
 }
 
 .registrationpage__footer{
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
-.button__selection__yes{
-  width: 180px;
-  height: 20px;
+.button__selection{
+  width: 4rem;
+  height: 1.75rem;
   border-radius: 23%;
   font-family: 'Inconsolata';
+  color: #FFFFFF;
+  border: 2px solid white;
+}
+
+.button__selection--yes{
   background-color: #8D5705;
-  color: #FFFFFF;
-  border: none;
 }
 
-.button__selection__no{
-  width: 180px;
-  height: 20px;
+.button__selection--no {
+  background-color:#FF9A78;
+}
+
+.button__selection--clicked {
+  box-shadow: inset 0 0 .75rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.registrationpage__radio {
+  display: flex;
+  gap: .5rem;
+}
+
+.registrationpage__radio input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.registrationpage__radio label {
+  display: inline-block;
+  padding: .5rem;
   border-radius: 23%;
   font-family: 'Inconsolata';
-  background-color:#FF9A78;
   color: #FFFFFF;
-  border: none;
+  border: 2px solid white;
+  text-align: center;
+}
+.registrationpage__radio input[type="radio"]:checked + label {
+  background-color:#bfb;
+  border-color: #4c4;
+}
+.registrationpage__radio input[type="radio"]:focus + label {
+  border: 2px dashed #444;
+}
+.registrationpage__radio .radio-toolbar label:hover {
+  background-color: #dfd;
+}
+.registrationpage__button {
+  width: 4rem;
+  height: 1.75rem;
+  border-radius: 23%;
+  font-family: 'Inconsolata';
+  color: #FFFFFF;
+  border: 2px solid white;
+}
+
+.registrationpage__button:checked {
+  background-color: #8D5705;
+}
+
+.registrationpage__submit {
+  padding: .5rem 2rem;
+  background: #FF9A78;
+  border: 2px solid #8D5705;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.25rem;
+  margin-top: .5rem;
+  font-weight: bold;
 }
