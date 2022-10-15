@@ -44,11 +44,11 @@ const RegistrationPage = (props) => {
     setFormSubmission(newState);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     axios.defaults.headers.post["Content-Type"] =
       "application/x-www-form-urlencoded";
 
-    axios
+    await axios
       .post(`https://terribledatingapp-api.herokuapp.com/`, formSubmission)
       .then((res) => {
         console.log(res);
