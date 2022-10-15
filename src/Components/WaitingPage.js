@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import searchingAnimation from "../assets/animations/searching-animation.json"
 import TagLines from "./TagLines";
-function WatiningPage() {
+function WaitingPage() {
   return (
     
     <div>
@@ -12,4 +12,4 @@ function WatiningPage() {
   )
 }
 
-export default WatiningPage
+export default WaitingPage

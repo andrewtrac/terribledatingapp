@@ -3,7 +3,7 @@ import TagLines from "./TagLines"
 import "./FrontPage.css"
 import { useNavigate } from "react-router-dom"
 
-function FrontPage( {setUserEmail} ) {
+function FrontPage( {setUserEmail, setUserName} ) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const navigate = useNavigate();
@@ -18,6 +18,7 @@ function FrontPage( {setUserEmail} ) {
 
     const handleEmailSubmit = (event) => {
         setUserEmail(event.target.email.value)
+        setUserName(event.target.name.value)
         navigate("/registration");
     }
 
