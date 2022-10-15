@@ -26,9 +26,15 @@
 }
 
 .registrationpage__question{
-  width: 200px;
+  width: 900px;
 }
 
 .registrationpage__footer{
   margin-top: 30px;
+}
+
+.button_selection{
+  width: 140px;
+  border-radius: 30%;
+  font-family: 'Inconsolata';
 }
