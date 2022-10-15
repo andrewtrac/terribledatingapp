@@ -107,7 +107,7 @@ function ProfilePage(prop) {
         <h1 className="profile-page__title">Meet {foundMatch}.</h1>
         <h2 className="profile-page__text">You're {`${Math.floor((matchScore/22)*100)}%`} mismatched</h2>
         <div className="ascii-image">{asciiProfile[0]}</div>
-        <p className="profile-page__bio">My ideal date is drinks, salsa dancing, and grabbing a late night snack. I love to try new foods and travel. 0,, I don’t want to see pics of your kids.</p>
+        <p className="profile-page__bio">My ideal date is drinks, salsa dancing, and grabbing a late night snack. I love to try new foods and travel. I don’t want to see pics of your kids.</p>
         <span className="profile-page__meetup">Your meetup McDonalds</span>
         <div className="google-iframe">{randomMcD[mcdLocation]}</div>
         <span>Your meetup time:</span>
