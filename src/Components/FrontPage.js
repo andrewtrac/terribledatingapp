@@ -1,11 +1,15 @@
 import { useState } from "react"
 import TagLines from "./TagLines"
 
-function FrontPage() {
+function FrontPage( {setUserEmail} ) {
     const [email, setEmail] = useState("")
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value)
+    }
+
+    const handleEmailSubmit = (event) => {
+        setUserEmail(event.target.email.value)
     }
 
   return (
@@ -15,7 +19,7 @@ function FrontPage() {
             <h2>Welcome</h2>
             <TagLines />
         </div>
-        <form>
+        <form onSubmit={handleEmailSubmit}>
             <label>
                 Enter your email address
                 <input type="email" name="email" id="email" value={email} onChange={handleEmailChange} />
