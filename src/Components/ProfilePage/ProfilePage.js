@@ -4,7 +4,7 @@ import axios from "axios";
 
 function ProfilePage() {
 
-  const userName = "Addison"
+  const userName = "Ezra"
 
   const asciiProfile = [
     '······················································································································pb·DDDDDDDDDDDDDDDbp··························································Q·DDDDDDDDDDDDDDDDDDDDD·b·····················································pQ·DDDDDDDDDDQ·D·DDD·DDDDDD·b·················································)Q·DDDDDDDDDDDDDD·WQDQQQ·DDDDDDb················································Q·DDDDDDDDDDDDD·DQQWuWQQQDDDDDD·C··············································WpDDDDDD··DDPPWPPPPW·····PQQ·DDDDW··············································QQDDD·QQWC·················W)QDDD·C············································)·DDDDQQWC····················WQ·D·C············································)QDDD·QWW······················)QQ·b············································)·DD··WWW·······················QDDP············································Q·D·QQQW(························Q·b···········································Q·DDQQQ·QQDbbWp··········ppWP·····)·DC··········································QQ··QQQQQpb·WQWWWc······apWWWpp···)W············································)QQQQQQQQWQ)C··W)W········SC·d·····(·············································QQQQQWWC········WC······························································)QQQQWWW·······WWC·································································QQQWWc·····sQWC··································································QQQWWW····)WW···································································QQQQWWW···WDWW···································································QQQQQWWW·········································································QQQQWWWWWPPPW····································································QQQQWWWWWQ······································································)QQWQWWWWW······································································)QQQQQWWW·······································································QQQQQQWQWWWs···································································pQQQWWWWWWW····································································QQQQQWWG·····································································pQQWWQQWWW···································································dQW·····WWWWW·······························································sW··········WWW············································································sWWW····················································ss······················WP··················································QW···········································································aQW········································································',
@@ -31,6 +31,7 @@ function ProfilePage() {
   const [ mcdLocation, setMcdLocation ] = useState([])
   const [ usersData, setUsersData ] = useState([])
   const [ currentUser, setCurentUser ] = useState({})
+  const [ foundMatch, setFoundMatch ] = useState('')
 
   useEffect(() => {
     
@@ -86,10 +87,10 @@ function ProfilePage() {
       console.log(highestFalseScores)
       console.log(highestFalseScoresUser)
     }
-    
+    setFoundMatch(highestFalseScoresUser)
   }
 
-  if (!mcdLocation || !usersData || !currentUser) {
+  if (!mcdLocation || !usersData || !currentUser || !foundMatch) {
     return (
       <>
         <h1>... Matching ...</h1>
@@ -101,7 +102,7 @@ function ProfilePage() {
   return (  
     <div className="profile-page">
       <div className="profile-page__container">
-        <h1 className="profile-page__title">Here you go!</h1>
+        <h1 className="profile-page__title">Here you go! Your match is {foundMatch}</h1>
         <h2 className="profile-page__text">Take it or leave it!</h2>
         <div className="ascii-image">{asciiProfile[0]}</div>
         <span>Your meetup location</span>
