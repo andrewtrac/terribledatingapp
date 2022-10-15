@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 function TagLines() {
     const tagLines = [
+        "Your last chance at happiness",
         "You’ve tried all the others, why not ours?",
         "What have you got to lose?",
         "They say opposites attract… how about mortal enemies?",
@@ -10,11 +11,10 @@ function TagLines() {
         "It’s not them, it’s you!",
         "Meet your new antagonist",
         "Take it or leave it",
-        "Your last chance at happiness",
         "Do you want to die alone?",
         "Your mother wants grandchildren!"
     ]
-    const [currentTagline, setCurrentTagline] = useState("")
+    const [currentTagline, setCurrentTagline] = useState(tagLines[0])
     const [intervalRunning, setIntervalRunning] = useState(false)
 
     useEffect (()=>{
