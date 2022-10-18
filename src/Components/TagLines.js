@@ -23,7 +23,7 @@ function TagLines() {
                 const totalTaglines = tagLines.length - 1;
                 const chosenTaglineIndex = Math.floor(Math.random() * totalTaglines)
                 setCurrentTagline(tagLines[chosenTaglineIndex])
-            }, 10000)
+            }, 5000)
             setIntervalRunning(true)
         }
     },[])

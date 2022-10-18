@@ -38,8 +38,12 @@ const RegistrationPage = (props) => {
   const navigate = useNavigate();
 
   const handleClick = (event) => {
+    const clickedId = event.currentTarget.id
+    const justId = Number(clickedId.slice(-1)) + 1
+    // console.log(justId)
     const newState = { ...formSubmission };
-    const selector = `question_${event.currentTarget.id}`;
+    // const selector = `question_${event.currentTarget.id}`;
+    const selector = `question_${justId}`;
     newState[selector] = (event.currentTarget.value === "true" ? true : false);
     console.log(newState);
     setFormSubmission(newState);
@@ -52,6 +56,7 @@ const RegistrationPage = (props) => {
 
     await axios
       .post(`https://terribledatingapp-api.herokuapp.com/`, formSubmission)
+      // .post(`http://localhost:7878/`, formSubmission)
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -96,13 +101,13 @@ const RegistrationPage = (props) => {
               <p className="registrationpage__question">{question[0]}</p>
               <div className="registrationpage__radio">
                 <input 
-                type="radio" id={question[1]+index} name={question[0]} value={true} checked/>
+                type="radio" onClick={handleClick} id={question[1]+index} name={question[0]} value={true}/>
                 <label 
-                for={question[1]+index}>{question[1]}</label>
+                htmlFor={question[1]+index}>{question[1]}</label>
                 <input 
-                type="radio" id={question[2]+index} name={question[0]} value={false}/>
+                type="radio" onClick={handleClick} id={question[2]+index} name={question[0]} value={false}/>
                 <label 
-                for={question[2]+index}>{question[2]}</label>
+                htmlFor={question[2]+index}>{question[2]}</label>
               </div>
 
 
@@ -110,23 +115,23 @@ const RegistrationPage = (props) => {
 
 
               {/* <div>
-              <button
-                id={index + 1}
-                className="button__selection button__selection--yes"
-                value={true}
-                onClick={handleClick}
-              >
-                {question[1]}
-              </button>
-              <button
-                id={index + 1}
-                className="button__selection button__selection--no"
-                value={false}
-                style={{ marginLeft: "5px" }}
-                onClick={handleClick}
-              >
-                {question[2]}
-              </button>
+                <button
+                  id={index + 1}
+                  className="button__selection button__selection--yes"
+                  value={true}
+                  onClick={handleClick}
+                >
+                  {question[1]}
+                </button>
+                <button
+                  id={index + 1}
+                  className="button__selection button__selection--no"
+                  value={false}
+                  style={{ marginLeft: "5px" }}
+                  onClick={handleClick}
+                >
+                  {question[2]}
+                </button>
               </div> */}
             </div>
           );
