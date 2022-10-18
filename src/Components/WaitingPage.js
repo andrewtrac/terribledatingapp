@@ -7,7 +7,7 @@ function WaitingPage() {
   const navigate = useNavigate()
   setTimeout(()=>{
     navigate("/match")
-  }, 25000)
+  }, 5000)
   return (
     <div className="waitingpage">
         <h2 className="waitingpage__message">Finding your perfect mismatch...</h2>
